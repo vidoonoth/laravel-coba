@@ -1,0 +1,186 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class koleksiBuku extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        //
+        DB::table('books')->insert([
+            [
+                'bookTitle' => 'Aroma Karsa',
+                'genre' => 'Fiksi',
+                'isbn' => '9786022914631',
+                'author' => 'Dee Lestari',
+                'publicationYear' => '2018',
+                'publisher' => 'Bentang Pustaka',
+                'description' => '724',
+                'synopsis' => 'Aroma Karsa mengisahkan Jati Wesi, pemuda dengan penciuman luar biasa, yang terlibat dalam pencarian bunga mistis Puspa Karsa bersama Raras Prayagung. Puspa Karsa, bunga yang diyakini bisa mengendalikan kehendak, membawa Jati ke dalam berbagai misteri dan rahasia besar di balik bunga tersebut.',
+                'bookImage' => null,
+            ],
+            [
+                'bookTitle' => 'Atomic Habits',
+                'genre' => 'Self Improvement',
+                'isbn' => '9786020667188',
+                'author' => 'James Clear',
+                'publicationYear' => '2018',
+                'publisher' => 'Gramedia Pustaka Utama',
+                'description' => '352',
+                'synopsis' => 'Atomic Habits menjelaskan bagaimana kebiasaan kecil dan konsisten dapat menghasilkan perubahan besar dalam hidup. Buku ini menawarkan strategi praktis dan contoh nyata untuk menunjukkan dampak keputusan kecil dalam mencapai kesuksesan dan kebahagiaan jangka panjang.',
+                'bookImage' => 'atomic.jpeg',
+            ],
+            [
+                'bookTitle' => 'Bertemu di Temaram',
+                'genre' => 'Puisi',
+                'isbn' => '9786020530147',
+                'author' => 'Boy Candra',
+                'publicationYear' => '2019',
+                'publisher' => 'Gramedia Widiasarana',
+                'description' => '144',
+                'synopsis' => 'Bertemu di Temaram menggambarkan perasaan seseorang yang terjebak dalam badai emosional, merindukan kehadiran orang yang dicintai. Dalam suasana hujan yang terus-menerus, Boy Candra menyampaikan harapan dan kerinduan yang mendalam, serta jarak yang dijaga antara diri sendiri dan orang tercinta.',
+                'bookImage' => 'aroma_karsa.jpeg',
+            ],
+            [
+                'bookTitle' => 'Di Tanah Lada',
+                'genre' => 'Fiksi',
+                'isbn' => '9786231342485',
+                'author' => 'Ziggy Zezsyazeoviennazabrizkie',
+                'publicationYear' => '2015',
+                'publisher' => 'KPG',
+                'description' => '304',
+                'synopsis' => 'Di Tanah Lada mengisahkan Salva, atau Ava, yang merasa tak diinginkan oleh ayahnya. Setelah pindah ke Rusun Nero, Ava bertemu dengan P, seorang anak yang pandai bermain gitar. Bersama, mereka menjalani petualangan yang membawa pembaca ke berbagai sisi kehidupan penuh kejutan.',
+                'bookImage' => 'di_tanah_lada.jpeg',
+            ],
+            [
+                'bookTitle' => 'Filosofi Teras',
+                'genre' => 'Self Improvement',
+                'isbn' => '9786233463034',
+                'author' => 'Henry Manampiring',
+                'publicationYear' => '2019',
+                'publisher' => 'Penerbit Buku Kompas',
+                'description' => '296',
+                'synopsis' => 'Filosofi Teras memperkenalkan Stoisisme, filsafat Yunani-Romawi kuno yang membantu mengatasi emosi negatif dan membangun ketangguhan mental. Buku ini relevan bagi Generasi Milenial dan Gen Z, dengan pendekatan praktis dalam menghadapi kecemasan dan kekhawatiran.',
+                'bookImage' => 'filosofi_teras.jpeg',
+            ],
+            [
+                'bookTitle' => 'Hidup Tetap Berjalan dan Kita telah Lupa Alasannya',
+                'genre' => 'Puisi',
+                'isbn' => '9786020679051',
+                'author' => 'Ibe S. Palogai',
+                'publicationYear' => '2020',
+                'publisher' => 'Gramedia Pustaka Utama',
+                'description' => '98',
+                'synopsis' => 'Buku ini mengingatkan pembaca bahwa berbagai pengalaman buruk dalam hidup—seperti menjadi panutan yang salah, dikhianati, diremehkan, atau terjebak dalam situasi sulit—bukanlah kesalahan mereka. Buku ini menegaskan pentingnya menerima diri dan melepaskan beban emosional dari pengalaman negatif tersebut.',
+                'bookImage' => 'hidup_tetap_berjalan.jpeg',
+            ],
+            [
+                'bookTitle' => 'Hujan',
+                'genre' => 'Fiksi',
+                'isbn' => '9786239987879',
+                'author' => 'Tere Liye',
+                'publicationYear' => '2021',
+                'publisher' => 'Sabak Grip',
+                'description' => '320',
+                'synopsis' => 'Hujan mengisahkan Lail dan Esok, dua sahabat yang terpisah setelah bencana. Kesalahpahaman membuat Lail memutuskan untuk menghapus ingatannya. Novel ini mengangkat tema cinta, persahabatan, dan perpisahan dengan hujan sebagai simbol utama.',
+                'bookImage' => 'hujan.jpeg',
+            ],
+            [
+                'bookTitle' => 'Laut Bercerita',
+                'genre' => 'Fiksi Sejarah',
+                'isbn' => '9786024246945',
+                'author' => 'Leila S. Chudori',
+                'publicationYear' => '2017',
+                'publisher' => 'KPG',
+                'description' => '400',
+                'synopsis' => 'Laut Bercerita karya Leila S. Chudori, bertutur tentang kisah keluarga yang kehilangan, sekumpulan sahabat yang merasakan kekosongan di dada, sekelompok orang yang gemar menyiksa dan lancar berkhianat, sejumlah keluarga yang mencari kejelasan makam anaknya, dan tentang cinta yang tak akan luntur.',
+                'bookImage' => 'laut_bercerita.jpg',
+            ],
+            [
+                'bookTitle' => 'Pelajaran Menyetir',
+                'genre' => 'Fiksi',
+                'isbn' => '9786020679600',
+                'author' => 'Antologi Bacapetra',
+                'publicationYear' => '2019',
+                'publisher' => 'Gramedia Pustaka Utama',
+                'description' => '200',
+                'synopsis' => 'Menyusun antologi adalah pekerjaan melelahkan. Menyusun antologi adalah pekerjaan nyaris mustahil. Bahkan jika gagasan dasarnya sangatlah masuk akal dan materi tulisan untuk antologi tersebut telah tersedia, si penyusun antologi akan tetap menemui aral yang tak bisa dianggap sepele.',
+                'bookImage' => 'pelajaran_menyetir.jpeg',
+            ],
+            [
+                'bookTitle' => 'The Physiology of Money',
+                'genre' => 'Self Improvement',
+                'isbn' => '9786238371099',
+                'author' => 'Morgan Housel',
+                'publicationYear' => '2020',
+                'publisher' => 'Baca',
+                'description' => '320',
+                'synopsis' => 'The Psychology of Money membahas bagaimana perilaku, bukan kecerdasan, menentukan kesuksesan finansial. Melalui 19 cerita pendek, Housel mengeksplorasi cara-cara unik orang berpikir tentang uang, menyoroti bahwa keputusan finansial lebih dipengaruhi oleh emosi dan pengalaman pribadi daripada data atau rumus.',
+                'bookImage' => 'physiology.jpeg',
+            ],
+            [
+                'bookTitle' => 'Ratu Adil',
+                'genre' => 'Sejarah',
+                'isbn' => '9786020674896',
+                'author' => 'Sindhunata',
+                'publicationYear' => '2018',
+                'publisher' => 'Gramedia Pustaka Utama',
+                'description' => '678',
+                'synopsis' => 'Buku Ratu Adil: Ramalan Jayabaya & Sejarah Perlawanan Wong Cilik mengisahkan pergulatan wong cilik di Jawa abad ke-19 hingga awal abad ke-20, mengungkap harapan akan hadirnya Ratu Adil sebagai simbol perjuangan melawan ketidakadilan.',
+                'bookImage' => 'ratu_adil.jpeg',
+            ],
+            [
+                'bookTitle' => 'Rempah Rempah',
+                'genre' => 'Sejarah',
+                'isbn' => '9786232201828',
+                'author' => 'Roger Crowley',
+                'publicationYear' => '2019',
+                'publisher' => 'Alvabet',
+                'description' => '376',
+                'synopsis' => 'Rempah-Rempah menceritakan persaingan sengit negara-negara Eropa pada abad ke-16 untuk menguasai rempah-rempah di Maluku, yang memicu perdagangan global dan membentuk perekonomian dunia modern. Roger Crowley menggambarkan petualangan dan pertempuran maritim yang mengubah sejarah kolonial dan ekonomi global.',
+                'bookImage' => 'rempah_rempah.jpeg',
+            ],
+            [
+                'bookTitle' => 'Semua Ikan di Langit',
+                'genre' => 'Fiksi',
+                'isbn' => '9786023758067',
+                'author' => 'Ziggy Zezsyazeoviennazabrizkie',
+                'publicationYear' => '2021',
+                'publisher' => 'Gramedia Widiasarana',
+                'description' => '220',
+                'synopsis' => 'Semua Ikan di Langit menceritakan perjalanan magis Bus Damri bersama Beliau dan berbagai makhluk, melintasi dimensi ruang dan waktu. Sepanjang perjalanan, Saya terus bertanya-tanya bagaimana cara terbaik mencintai Beliau, sambil mengalami petualangan surreal yang penuh makna dan pertanyaan filosofis.',
+                'bookImage' => 'semua_ikan_di_langit.jpeg',
+            ],
+            [
+                'bookTitle' => 'The Principles of Power',
+                'genre' => 'Self Improvement',
+                'isbn' => '9786238847426',
+                'author' => 'Dion Yulianto',
+                'publicationYear' => '2022',
+                'publisher' => 'Jendela Penerbit',
+                'description' => '194',
+                'synopsis' => 'The Principles Of Power menawarkan 33 strategi praktis untuk mendapatkan kekuasaan dan pengaruh secara positif. Dengan contoh-contoh dari tokoh-tokoh terkenal dan kisah inspiratif, buku ini membimbing pembaca dalam membangun rasa hormat, mendapatkan perhatian, dan meraih kesuksesan dalam persaingan.',
+                'bookImage' => 'the_principles_of_power.jpeg',
+            ],
+            [
+                'bookTitle' => 'Bintang',
+                'genre' => 'Fiksi',
+                'isbn' => '9786239726294',
+                'author' => 'Tere Liye',
+                'publicationYear' => '2020',
+                'publisher' => 'Sabak Grip',
+                'description' => '382',
+                'synopsis' => 'Bintang adalah buku keempat dari serial Bumi yang ditulis oleh Tere Liye. Novel Bintang menceritakan tentang Raib, Seli, dan Ali, mereka adalah murid SMA kelas 11 dan berteman baik. Penampilan mereka sama seperti para murid SMA lainnya, tetapi siapa sangka bahwa mereka memiliki dan menyimpan banyak rahasia besar.',
+                'bookImage' => 'bintang.jpeg',
+            ],
+        ]);
+
+    }
+}
