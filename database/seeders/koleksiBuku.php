@@ -24,7 +24,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Bentang Pustaka',
                 'description' => '724',
                 'synopsis' => 'Aroma Karsa mengisahkan Jati Wesi, pemuda dengan penciuman luar biasa, yang terlibat dalam pencarian bunga mistis Puspa Karsa bersama Raras Prayagung. Puspa Karsa, bunga yang diyakini bisa mengendalikan kehendak, membawa Jati ke dalam berbagai misteri dan rahasia besar di balik bunga tersebut.',
-                'bookImage' => null,
+                'bookImage' => 'aroma_karsa.jpg',
             ],
             [
                 'bookTitle' => 'Atomic Habits',
@@ -35,7 +35,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Gramedia Pustaka Utama',
                 'description' => '352',
                 'synopsis' => 'Atomic Habits menjelaskan bagaimana kebiasaan kecil dan konsisten dapat menghasilkan perubahan besar dalam hidup. Buku ini menawarkan strategi praktis dan contoh nyata untuk menunjukkan dampak keputusan kecil dalam mencapai kesuksesan dan kebahagiaan jangka panjang.',
-                'bookImage' => 'atomic.jpeg',
+                'bookImage' => 'atomic.jpg',
             ],
             [
                 'bookTitle' => 'Bertemu di Temaram',
@@ -46,7 +46,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Gramedia Widiasarana',
                 'description' => '144',
                 'synopsis' => 'Bertemu di Temaram menggambarkan perasaan seseorang yang terjebak dalam badai emosional, merindukan kehadiran orang yang dicintai. Dalam suasana hujan yang terus-menerus, Boy Candra menyampaikan harapan dan kerinduan yang mendalam, serta jarak yang dijaga antara diri sendiri dan orang tercinta.',
-                'bookImage' => 'aroma_karsa.jpeg',
+                'bookImage' => 'bertemu_di_temaram.jpg',
             ],
             [
                 'bookTitle' => 'Di Tanah Lada',
@@ -57,7 +57,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'KPG',
                 'description' => '304',
                 'synopsis' => 'Di Tanah Lada mengisahkan Salva, atau Ava, yang merasa tak diinginkan oleh ayahnya. Setelah pindah ke Rusun Nero, Ava bertemu dengan P, seorang anak yang pandai bermain gitar. Bersama, mereka menjalani petualangan yang membawa pembaca ke berbagai sisi kehidupan penuh kejutan.',
-                'bookImage' => 'di_tanah_lada.jpeg',
+                'bookImage' => 'di_tanah_lada.jpg',
             ],
             [
                 'bookTitle' => 'Filosofi Teras',
@@ -68,7 +68,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Penerbit Buku Kompas',
                 'description' => '296',
                 'synopsis' => 'Filosofi Teras memperkenalkan Stoisisme, filsafat Yunani-Romawi kuno yang membantu mengatasi emosi negatif dan membangun ketangguhan mental. Buku ini relevan bagi Generasi Milenial dan Gen Z, dengan pendekatan praktis dalam menghadapi kecemasan dan kekhawatiran.',
-                'bookImage' => 'filosofi_teras.jpeg',
+                'bookImage' => 'filosofi_teras.jpg',
             ],
             [
                 'bookTitle' => 'Hidup Tetap Berjalan dan Kita telah Lupa Alasannya',
@@ -79,7 +79,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Gramedia Pustaka Utama',
                 'description' => '98',
                 'synopsis' => 'Buku ini mengingatkan pembaca bahwa berbagai pengalaman buruk dalam hidup—seperti menjadi panutan yang salah, dikhianati, diremehkan, atau terjebak dalam situasi sulit—bukanlah kesalahan mereka. Buku ini menegaskan pentingnya menerima diri dan melepaskan beban emosional dari pengalaman negatif tersebut.',
-                'bookImage' => 'hidup_tetap_berjalan.jpeg',
+                'bookImage' => 'hidup_tetap_berjalan.jpg',
             ],
             [
                 'bookTitle' => 'Hujan',
@@ -90,7 +90,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Sabak Grip',
                 'description' => '320',
                 'synopsis' => 'Hujan mengisahkan Lail dan Esok, dua sahabat yang terpisah setelah bencana. Kesalahpahaman membuat Lail memutuskan untuk menghapus ingatannya. Novel ini mengangkat tema cinta, persahabatan, dan perpisahan dengan hujan sebagai simbol utama.',
-                'bookImage' => 'hujan.jpeg',
+                'bookImage' => 'hujan.jpg',
             ],
             [
                 'bookTitle' => 'Laut Bercerita',
@@ -112,7 +112,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Gramedia Pustaka Utama',
                 'description' => '200',
                 'synopsis' => 'Menyusun antologi adalah pekerjaan melelahkan. Menyusun antologi adalah pekerjaan nyaris mustahil. Bahkan jika gagasan dasarnya sangatlah masuk akal dan materi tulisan untuk antologi tersebut telah tersedia, si penyusun antologi akan tetap menemui aral yang tak bisa dianggap sepele.',
-                'bookImage' => 'pelajaran_menyetir.jpeg',
+                'bookImage' => 'pelajaran_menyetir.jpg',
             ],
             [
                 'bookTitle' => 'The Physiology of Money',
@@ -123,7 +123,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Baca',
                 'description' => '320',
                 'synopsis' => 'The Psychology of Money membahas bagaimana perilaku, bukan kecerdasan, menentukan kesuksesan finansial. Melalui 19 cerita pendek, Housel mengeksplorasi cara-cara unik orang berpikir tentang uang, menyoroti bahwa keputusan finansial lebih dipengaruhi oleh emosi dan pengalaman pribadi daripada data atau rumus.',
-                'bookImage' => 'physiology.jpeg',
+                'bookImage' => 'physiology.jpg',
             ],
             [
                 'bookTitle' => 'Ratu Adil',
@@ -134,7 +134,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Gramedia Pustaka Utama',
                 'description' => '678',
                 'synopsis' => 'Buku Ratu Adil: Ramalan Jayabaya & Sejarah Perlawanan Wong Cilik mengisahkan pergulatan wong cilik di Jawa abad ke-19 hingga awal abad ke-20, mengungkap harapan akan hadirnya Ratu Adil sebagai simbol perjuangan melawan ketidakadilan.',
-                'bookImage' => 'ratu_adil.jpeg',
+                'bookImage' => 'ratu_adil.jpg',
             ],
             [
                 'bookTitle' => 'Rempah Rempah',
@@ -145,7 +145,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Alvabet',
                 'description' => '376',
                 'synopsis' => 'Rempah-Rempah menceritakan persaingan sengit negara-negara Eropa pada abad ke-16 untuk menguasai rempah-rempah di Maluku, yang memicu perdagangan global dan membentuk perekonomian dunia modern. Roger Crowley menggambarkan petualangan dan pertempuran maritim yang mengubah sejarah kolonial dan ekonomi global.',
-                'bookImage' => 'rempah_rempah.jpeg',
+                'bookImage' => 'rempah_rempah.jpg',
             ],
             [
                 'bookTitle' => 'Semua Ikan di Langit',
@@ -156,7 +156,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Gramedia Widiasarana',
                 'description' => '220',
                 'synopsis' => 'Semua Ikan di Langit menceritakan perjalanan magis Bus Damri bersama Beliau dan berbagai makhluk, melintasi dimensi ruang dan waktu. Sepanjang perjalanan, Saya terus bertanya-tanya bagaimana cara terbaik mencintai Beliau, sambil mengalami petualangan surreal yang penuh makna dan pertanyaan filosofis.',
-                'bookImage' => 'semua_ikan_di_langit.jpeg',
+                'bookImage' => 'semua_ikan_di_langit.jpg',
             ],
             [
                 'bookTitle' => 'The Principles of Power',
@@ -167,7 +167,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Jendela Penerbit',
                 'description' => '194',
                 'synopsis' => 'The Principles Of Power menawarkan 33 strategi praktis untuk mendapatkan kekuasaan dan pengaruh secara positif. Dengan contoh-contoh dari tokoh-tokoh terkenal dan kisah inspiratif, buku ini membimbing pembaca dalam membangun rasa hormat, mendapatkan perhatian, dan meraih kesuksesan dalam persaingan.',
-                'bookImage' => 'the_principles_of_power.jpeg',
+                'bookImage' => 'the_principles_of_power.jpg',
             ],
             [
                 'bookTitle' => 'Bintang',
@@ -178,7 +178,7 @@ class koleksiBuku extends Seeder
                 'publisher' => 'Sabak Grip',
                 'description' => '382',
                 'synopsis' => 'Bintang adalah buku keempat dari serial Bumi yang ditulis oleh Tere Liye. Novel Bintang menceritakan tentang Raib, Seli, dan Ali, mereka adalah murid SMA kelas 11 dan berteman baik. Penampilan mereka sama seperti para murid SMA lainnya, tetapi siapa sangka bahwa mereka memiliki dan menyimpan banyak rahasia besar.',
-                'bookImage' => 'bintang.jpeg',
+                'bookImage' => 'bintang.jpg',
             ],
         ]);
 

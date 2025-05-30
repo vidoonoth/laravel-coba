@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use App\Notifications\DiterimaNotification;
 
 class UsulanController extends Controller
 {
@@ -52,36 +53,36 @@ class UsulanController extends Controller
     }   
 
     public function store(Request $request)
-    {
-        // Validasi input
-        $validator = Validator::make($request->all(), [
-            'bookTitle' => 'required|string',
-            'genre' => 'required|string|max:255',
-            'isbn' => 'nullable|string',
-            'author' => 'required|string|max:255',
-            'publicationYear' => 'required|string',
-            'publisher' => 'required|string|max:255',
-            'date' => 'required|date',
-            'bookImage' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
-        ]);
+{
+    // Validasi input
+    $validator = Validator::make($request->all(), [
+        'bookTitle' => 'required|string',
+        'genre' => 'required|string|max:255',
+        'isbn' => 'nullable|string',
+        'author' => 'required|string|max:255',
+        'publicationYear' => 'required|string',
+        'publisher' => 'required|string|max:255',
+        'date' => 'required|date',
+        'bookImage' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+    ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => false,
-                'errors' => $validator->errors()
-            ], 422);
-        }
+    if ($validator->fails()) {
+        return response()->json([
+            'status' => false,
+            'errors' => $validator->errors()
+        ], 422);
+    }
 
+    try {
         // Simpan gambar jika ada
         $bookImagePath = null;
         if ($request->hasFile('bookImage')) {
             $originalName = $request->file('bookImage')->getClientOriginalName(); 
-            
             $request->file('bookImage')->storeAs('usulan', $originalName, 'public');
             $bookImagePath = $originalName;
         }
         
-        $usulan = Pengusulan::create([
+        $pengusulan = Pengusulan::create([
             'bookTitle' => $request->bookTitle,
             'genre' => $request->genre,
             'isbn' => $request->isbn,
@@ -94,12 +95,25 @@ class UsulanController extends Controller
             'user_id' => Auth::id(),      
         ]);
 
+        // Kirim notifikasi ke admin        
+
+        // Kirim notifikasi ke user yang mengusulkan
+        // Using the Notification facade instead of the notify method
+        \Illuminate\Support\Facades\Notification::send(Auth::user(), new DiterimaNotification($pengusulan, Auth::user()));
+
         return response()->json([
             'status' => true,
             'message' => 'Usulan berhasil dikirim',
-            'data' => $usulan
+            'data' => $pengusulan
         ], 201);
+
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => false,
+            'message' => 'Terjadi kesalahan: ' . $e->getMessage()
+        ], 500);
     }
+}
 
  public function update(Request $request, $id)
 {
@@ -130,6 +144,7 @@ class UsulanController extends Controller
         $validated['bookImage'] = null;
     }
 
+    $pengusulan->update($validated);
     $pengusulan->update($validated);
 
     return response()->json([

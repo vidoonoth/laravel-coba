@@ -33,9 +33,9 @@ class RegisteredUserController extends Controller
         'username' => ['required', 'string', 'max:255'],
         'name' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-        'numberphone' => ['required', 'string', 'min:10', 'max:13'],
-        'nik' => ['required', 'string', 'min:16', 'max:16'],
-        'gender' => ['required', 'string', 'max:255'],
+        'numberphone' => ['nullable', 'string', 'min:10', 'max:13'],
+        'nik' => ['nullable', 'string', 'min:16', 'max:16'],
+        'gender' => ['nullable', 'string', 'max:255'],
         'password' => ['required', 'confirmed', Rules\Password::defaults()],
     ]);
 
@@ -43,9 +43,9 @@ class RegisteredUserController extends Controller
         'username' => $request->username,
         'name' => $request->name,
         'email' => $request->email,
-        'numberphone' => $request->numberphone,
-        'nik' => $request->nik,
-        'gender' => $request->gender,
+        'numberphone' => $request->numberphone ?? '',
+        'nik' => $request->nik ?? '',
+        'gender' => $request->gender ?? '',
         'password' => Hash::make($request->password),
         'profileImage' => null,
     ]);

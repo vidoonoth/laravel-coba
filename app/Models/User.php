@@ -60,9 +60,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Pengusulan::class);
     }
-    public function notifications()
-    {
-        return $this->morphMany(DatabaseNotification::class, 'notifiable');
-    }
+    // The notifications() method is already provided by the Notifiable trait
+    // Removing this custom implementation to fix the 'notify' method
 
 }

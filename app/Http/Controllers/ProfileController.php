@@ -22,25 +22,25 @@ class ProfileController extends Controller
 {
     $user = Auth::user();
 
-    if (!$user) {
-        if ($request->expectsJson()) {
-            return response()->json(['message' => 'Unauthenticated'], 401);
-        }
-        return redirect()->route('login'); // untuk web
-    }
+    // if (!$user) {
+    //     if ($request->expectsJson()) {
+    //         return response()->json(['message' => 'Unauthenticated'], 401);
+    //     }
+    //     return redirect()->route('login'); // untuk web
+    // }
 
-    if ($request->expectsJson()) {
-        return response()->json([
-            'id' => $user->id,
-            'name' => $user->name,
-            'email' => $user->email,
-            'nik' => $user->nik,
-            'numberphone' => $user->numberphone,
-            'gender' => $user->gender,
-            'created_at' => \Carbon\Carbon::parse($user->created_at)->locale('id')->translatedFormat('d F Y'),
-            'profileImage' => $user->profile_image ? url('storage/profile_images/' . $user->profile_image) : null, // pastikan path-nya benar
-        ]);
-    }
+    // if ($request->expectsJson()) {
+    //     return response()->json([
+    //         'id' => $user->id,
+    //         'name' => $user->name,
+    //         'email' => $user->email,
+    //         'nik' => $user->nik,
+    //         'numberphone' => $user->numberphone,
+    //         'gender' => $user->gender,
+    //         'created_at' => \Carbon\Carbon::parse($user->created_at)->locale('id')->translatedFormat('d F Y'),
+    //         'profileImage' => $user->profile_image ? url('storage/profile_images/' . $user->profile_image) : null, // pastikan path-nya benar
+    //     ]);
+    // }
 
     // Untuk view web
     $passwordLength = strlen($user->password);
@@ -54,30 +54,6 @@ class ProfileController extends Controller
         $user = Auth::user();
         return view('profile.edit', compact('user'));
     }
-
-    // public function update(Request $request) { 
-    //     $user = Auth::user(); 
-    //     $request->validate([ 
-    //         'username' => 'required|string|max:100', 
-    //         'name' => 'required|string|max:100', 
-    //         'email' => 'required|string|email|max:150|unique:users,email,' . $user->id, 
-    //         'numberphone' => 'required|string', 
-    //         'nik' => 'required|string', 
-    //         'gender' => 'required|string', 
-    //         'password' => 'nullable|string|min:8' ]); 
-            
-    //     $user->fill([ 
-    //         'username' => $request->username, 
-    //         'name' => $request->name, 
-    //         'email' => $request->email, 
-    //         'numberphone' => $request->numberphone, 
-    //         'nik' => $request->nik, 
-    //         'gender' => $request->gender, 
-    //         'password' => $request->password ? Hash::make($request->password) : $user->password, 
-    //     ]);
-    //     $request->user()->save(); 
-    //     return redirect()->route('profile.index')->with('success', 'Profile updated successfully!'); 
-    // }
 
 public function update(ProfileUpdateRequest $request)
 {
