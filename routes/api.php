@@ -35,6 +35,7 @@ Route::middleware('api')->group(function () {
     Route::middleware('auth:sanctum')->delete('/pengusulan/delete-all/{user}', [UsulanController::class, 'deleteAll']);
     Route::get('/koleksi', [BookController::class, 'koleksiBuku']);
     
+    Route::middleware('auth:sanctum')->delete('/notifications/delete-all', [NotificationController::class, 'deleteAllUserNotifications']);
     Route::middleware('auth:sanctum')->get('/notifications', [NotificationController::class, 'getUserNotifications']);    
 });
 

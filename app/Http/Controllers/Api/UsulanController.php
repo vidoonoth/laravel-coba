@@ -73,6 +73,18 @@ class UsulanController extends Controller
         ], 422);
     }
 
+    $judul = strtolower($request->input('bookTitle'));
+    $duplikat = \App\Models\Pengusulan::whereRaw('LOWER(bookTitle) = ?', [$judul])
+        ->where('user_id', Auth::id()) // opsional: hanya cek duplikat untuk user ini
+        ->exists();
+
+    if ($duplikat) {
+        return response()->json([
+            'status' => false,
+            'message' => 'Judul buku sudah pernah diusulkan.'
+        ], 409);
+    }
+
     try {
         // Simpan gambar jika ada
         $bookImagePath = null;

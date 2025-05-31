@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    // use Illuminate\Notifications\Notifiable;
     use HasApiTokens, Notifiable, HasFactory;
     /** @use HasFactory<\Database\Factories\UserFactory> */
     // use HasFactory;
