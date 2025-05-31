@@ -46,27 +46,37 @@ public function index(Request $request)
     $passwordStars = str_repeat('*', 3);
     return view('profile.profile', compact('user', 'passwordStars'));
 }
-
 public function update(ProfileUpdateRequest $request)
 {
     try {
         $user = $request->user();
         $validatedData = $request->validated();
+        Log::info('Validated data', $validatedData);
 
-        if ($request->hasFile('profileImage')) {
+        // Handle profile image update or removal
+        if ($request->has('removeProfileImage') && $request->removeProfileImage) {
+            // Jika permintaan untuk menghapus gambar
+            if ($user->profileImage) {
+                Storage::disk('public')->delete('profile_images/'.$user->profileImage);
+                $validatedData['profileImage'] = null;
+            }
+        } elseif ($request->hasFile('profileImage')) {
+            // Jika ada file gambar baru diupload
             Log::info('ProfileImage received', ['name' => $request->file('profileImage')->getClientOriginalName()]);
             $request->validate([
                 'profileImage' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
+            
+            // Hapus gambar lama jika ada
             if ($user->profileImage) {
                 Storage::disk('public')->delete('profile_images/'.$user->profileImage);
             }
+            
+            // Simpan gambar baru
             $image = $request->file('profileImage');
             $imageName = time().'_'.$image->getClientOriginalName();
             $image->storeAs('profile_images', $imageName, 'public');
             $validatedData['profileImage'] = $imageName;
-        } else {
-            Log::warning('ProfileImage NOT received');
         }
 
         if ($request->filled('password')) {
@@ -74,15 +84,15 @@ public function update(ProfileUpdateRequest $request)
         } else {
             unset($validatedData['password']);
         }
-
+        Log::info('Validated data', $validatedData);
         $user->update($validatedData);
+        Log::info('User after update', ['profileImage' => $user->profileImage]);
 
         return response()->json([
             'success' => true,
             'message' => 'Profile updated successfully',
             'data' => [
                 'user' => $user->only(['id', 'username', 'name', 'email', 'gender', 'profileImage']),
-                'profileImage' => $user->profileImage,
                 'profile_image_url' => $user->profileImage 
                     ? asset('storage/profile_images/'.$user->profileImage)
                     : null,
@@ -97,17 +107,17 @@ public function update(ProfileUpdateRequest $request)
         ], 500);
     }
 }
-    
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
 
-        $user = $request->user();
+/**
+ * Delete the user's account.
+ */
+public function destroy(Request $request): RedirectResponse
+{
+    $request->validateWithBag('userDeletion', [
+        'password' => ['required', 'current_password'],
+    ]);
+
+    $user = $request->user();
 
         Auth::logout();
 
